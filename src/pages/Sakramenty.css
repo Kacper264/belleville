@@ -1,0 +1,26 @@
+.sacrament-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 32px;
+}
+
+.sacrament-item {
+  padding-top: 16px;
+  border-top: 1px solid var(--color-line);
+}
+
+.sacrament-item h3 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.sacrament-item p {
+  color: var(--color-ink-soft);
+  margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+  .sacrament-list {
+    grid-template-columns: 1fr;
+  }
+}

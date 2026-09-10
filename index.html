@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Polska Parafia na Bellevillu — Kaplica Matki Bożej z Bellevillu, Paryż. Godziny Mszy Świętych, sakramenty, ogłoszenia i kontakt."
+    />
+    <title>Polska Parafia na Bellevillu — Paryż</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!--
+      Formularz statyczny wymagany przez Netlify Forms: Netlify skanuje pliki HTML
+      w trakcie builda, więc bota trzeba "pokazać" formularz poza aplikacją React.
+      Pola muszą dokładnie odpowiadać formularzowi w src/pages/Kontakt.jsx.
+    -->
+    <form name="kontakt" data-netlify="true" netlify-honeypot="firma" hidden>
+      <input type="text" name="imie" />
+      <input type="email" name="email" />
+      <textarea name="wiadomosc"></textarea>
+      <input type="text" name="firma" />
+    </form>
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

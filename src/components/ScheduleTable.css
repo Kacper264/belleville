@@ -1,0 +1,31 @@
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-surface);
+}
+
+.schedule-table th,
+.schedule-table td {
+  text-align: left;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--color-line);
+  font-size: 0.96rem;
+}
+
+.schedule-table thead th {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.78rem;
+  color: var(--color-ink-soft);
+  border-bottom: 1px solid var(--color-ink);
+}
+
+.schedule-table tbody th {
+  font-family: var(--font-display);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.schedule-table__note {
+  color: var(--color-ink-soft);
+}

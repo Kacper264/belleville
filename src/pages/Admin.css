@@ -1,0 +1,76 @@
+.admin-login {
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0 auto;
+}
+
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 520px;
+  margin: 24px 0 48px;
+  padding: 24px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+}
+
+.admin-form__checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: var(--color-ink-soft);
+}
+
+.admin-form__actions {
+  display: flex;
+  gap: 12px;
+}
+
+.admin-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.admin-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 20px;
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
+}
+
+.admin-item.is-draft {
+  opacity: 0.6;
+  border-style: dashed;
+}
+
+.admin-item h3 {
+  font-size: 1.1rem;
+  margin: 4px 0 6px;
+}
+
+.admin-item p:last-child {
+  margin-bottom: 0;
+  color: var(--color-ink-soft);
+}
+
+.admin-item__actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}

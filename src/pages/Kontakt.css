@@ -1,0 +1,77 @@
+.kontakt-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-top: 12px;
+}
+
+.map-frame {
+  margin: 20px 0 16px;
+  border: 1px solid var(--color-line);
+}
+
+.map-frame iframe {
+  width: 100%;
+  height: 260px;
+  border: 0;
+}
+
+.kontakt-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 440px;
+}
+
+.kontakt-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-ink-soft);
+}
+
+.kontakt-form__field input,
+.kontakt-form__field textarea {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-ink);
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  resize: vertical;
+}
+
+.kontakt-form button {
+  align-self: flex-start;
+}
+
+.kontakt-form__success {
+  background: var(--color-surface);
+  border-left: 3px solid var(--color-verdigris);
+  padding: 16px 18px;
+  max-width: 440px;
+}
+
+.kontakt-form__error {
+  color: var(--color-burgundy);
+  font-size: 0.88rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .kontakt-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}

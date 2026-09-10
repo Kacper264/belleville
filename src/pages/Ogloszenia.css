@@ -1,0 +1,32 @@
+.ogloszenia-list {
+  margin-top: 24px;
+}
+
+.ogloszenie {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.ogloszenie:first-child {
+  padding-top: 0;
+}
+
+.ogloszenie__data {
+  font-size: 0.82rem;
+  color: var(--color-ink-soft);
+  margin-bottom: 4px;
+}
+
+.ogloszenie h2 {
+  font-size: 1.25rem;
+  margin-bottom: 6px;
+}
+
+.ogloszenie p:last-child {
+  margin-bottom: 0;
+  color: var(--color-ink-soft);
+}
+
+.ogloszenie__error {
+  color: var(--color-burgundy);
+}
