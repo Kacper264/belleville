@@ -5,9 +5,15 @@ import ArchMotif from '../components/ArchMotif.jsx';
 import ScheduleTable from '../components/ScheduleTable.jsx';
 import './Home.css';
 
+const HOME_OGLOSZENIE_EXCERPT_LENGTH = 180;
+
 export default function Home() {
   const { ogloszenia, loading } = useOgloszenia(1);
   const ostatnieOgloszenie = ogloszenia[0];
+  const trescOgloszenia = ostatnieOgloszenie?.tresc ?? '';
+  const skroconaTresc = trescOgloszenia.length > HOME_OGLOSZENIE_EXCERPT_LENGTH
+    ? `${trescOgloszenia.slice(0, HOME_OGLOSZENIE_EXCERPT_LENGTH).trimEnd()}…`
+    : trescOgloszenia;
 
   return (
     <>
@@ -23,17 +29,6 @@ export default function Home() {
             </div>
           </div>
           <ArchMotif className="hero__motif" count={3} />
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container">
-          <h2 className="section-title">Najbliższe Msze Święte</h2>
-          <p className="section-lead">
-            {parafia.adres.kosciol}, {parafia.adres.ulica}, {parafia.adres.kodMiasto}
-          </p>
-          <ScheduleTable />
-          <p className="eyebrow-note" style={{ marginTop: 16 }}>{parafia.adres.uwaga}</p>
         </div>
       </section>
 
@@ -59,12 +54,32 @@ export default function Home() {
                     year: 'numeric',
                   })}
                 </p>
+
+                {ostatnieOgloszenie.zdjecie_url && (
+                  <img
+                    className="announcement-card__zdjecie"
+                    src={ostatnieOgloszenie.zdjecie_url}
+                    alt={ostatnieOgloszenie.tytul}
+                    loading="lazy"
+                  />
+                )}
                 <h3>{ostatnieOgloszenie.tytul}</h3>
-                <p>{ostatnieOgloszenie.tresc}</p>
+                <p>{skroconaTresc}</p>
               </article>
             )}
             <Link className="btn" to="/ogloszenia">Wszystkie ogłoszenia</Link>
           </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <h2 className="section-title">Najbliższe Msze Święte</h2>
+          <p className="section-lead">
+            {parafia.adres.kosciol}, {parafia.adres.ulica}, {parafia.adres.kodMiasto}
+          </p>
+          <ScheduleTable />
+          <p className="eyebrow-note" style={{ marginTop: 16 }}>{parafia.adres.uwaga}</p>
         </div>
       </section>
     </>

@@ -32,6 +32,9 @@ export default function Ogloszenia() {
                 year: 'numeric',
               })}
             </p>
+            {o.zdjecie_url && (
+              <img className="ogloszenie__zdjecie" src={o.zdjecie_url} alt={o.tytul} loading="lazy" />
+            )}
             <h2>{o.tytul}</h2>
             <p>{o.tresc}</p>
           </article>

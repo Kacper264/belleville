@@ -15,7 +15,7 @@ export function useOgloszenia(limit) {
 
       let query = supabase
         .from('ogloszenia')
-        .select('id, tytul, tresc, data_publikacji')
+        .select('id, tytul, tresc, data_publikacji, zdjecie_url')
         .eq('opublikowane', true)
         .order('data_publikacji', { ascending: false });
 

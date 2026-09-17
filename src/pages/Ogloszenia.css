@@ -30,3 +30,10 @@
 .ogloszenie__error {
   color: var(--color-burgundy);
 }
+
+.ogloszenie__zdjecie {
+  width: 100%;
+  max-width: 480px;
+  margin: 10px 0;
+  border: 1px solid var(--color-line);
+}

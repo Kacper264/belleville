@@ -79,3 +79,10 @@
     gap: 40px;
   }
 }
+
+.announcement-card__zdjecie {
+  width: 100%;
+  max-width: 360px;
+  margin-bottom: 10px;
+  border: 1px solid var(--color-line);
+}

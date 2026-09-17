@@ -22,12 +22,12 @@ export const parafia = {
     link: 'https://www.google.com/maps?q=5+Allee+Gabrielle+dEstrees+75019+Paris',
   },
   kontakt: {
-    telefon: '+33 7 66 03 72 72',
+    telefon: '+33 7 51 08 83 31 / +48 507 172 870',
     email: 'parafiabelleville@gmail.com',
   },
-  proboszcz: 'ks. Mateusz Chejzdral',
+  proboszcz: 'ks. Piotr Boraca',
   mszeSwiete: [
-    { dzien: 'Niedziela i święta', godzina: '09:00 i 11:30', miejsce: 'Kaplica Matki Bożej z Bellevillu', uwaga: 'Msze po polsku' },
+    { dzien: 'Niedziela i święta', godzina: '09:00 i 11:00', miejsce: 'Kaplica Matki Bożej z Bellevillu', uwaga: 'Msze po polsku' },
     { dzien: 'Środa', godzina: '19:00', miejsce: 'Kaplica Matki Bożej z Bellevillu', uwaga: '' },
     { dzien: 'Piątek', godzina: '19:00', miejsce: 'Kaplica Matki Bożej z Bellevillu', uwaga: '' },
     { dzien: 'Sobota', godzina: '18:00', miejsce: 'Kaplica Matki Bożej z Bellevillu', uwaga: '' },
