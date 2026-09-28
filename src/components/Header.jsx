@@ -10,8 +10,11 @@ export default function Header() {
     <header className="site-header">
       <div className="container site-header__row">
         <NavLink to="/" className="site-header__mark" onClick={() => setOpen(false)}>
-          <span className="site-header__mark-top">{parafia.nazwa}</span>
-          <span className="site-header__mark-sub">{parafia.wezwanie}</span>
+            <img
+              className="hero__brand"
+              src="/hero.png"
+              alt={`${parafia.nazwa} — ${parafia.wezwanie}`}
+            />
         </NavLink>
 
         <button

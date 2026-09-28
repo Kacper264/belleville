@@ -33,7 +33,7 @@ export default function Home() {
           <div>
             <img
               className="hero__brand"
-              src="/hero.png"
+              src="/wspolnotaBV.jpg"
               alt={`${parafia.nazwa} — ${parafia.wezwanie}`}
             />
             <p className="hero__lead">{parafia.zgromadzenie}</p>
