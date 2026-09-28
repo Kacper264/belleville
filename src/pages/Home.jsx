@@ -1,13 +1,12 @@
 import { Link } from 'react-router-dom';
 import { parafia } from '../data/parafia.js';
 import { useOgloszenia } from '../hooks/useOgloszenia.js';
-import ArchMotif from '../components/ArchMotif.jsx';
 import ScheduleTable from '../components/ScheduleTable.jsx';
 import './Home.css';
 
 const HOME_OGLOSZENIE_EXCERPT_LENGTH = 180;
 const facebookPageUrl = import.meta.env.VITE_FACEBOOK_PAGE_URL?.trim();
-const facebookEmbedUrl = facebookPageUrl
+const facebookEmbedUrl = "https://www.facebook.com/ParafiaBelleville?locale=fr_FR"
   ? `https://www.facebook.com/plugins/page.php?${new URLSearchParams({
       href: facebookPageUrl,
       tabs: 'timeline',
