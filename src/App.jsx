@@ -5,6 +5,7 @@ import Home from './pages/Home.jsx';
 import Historia from './pages/Historia.jsx';
 import Sakramenty from './pages/Sakramenty.jsx';
 import Ogloszenia from './pages/Ogloszenia.jsx';
+import Zdjecia from './pages/Zdjecia.jsx';
 import Kontakt from './pages/Kontakt.jsx';
 import Admin from './pages/Admin.jsx';
 
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/historia" element={<Historia />} />
           <Route path="/sakramenty" element={<Sakramenty />} />
           <Route path="/ogloszenia" element={<Ogloszenia />} />
+          <Route path="/zdjecia" element={<Zdjecia />} />
           <Route path="/kontakt" element={<Kontakt />} />
           <Route path="/admin" element={<Admin />} />
         </Routes>

@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import { supabase } from '../lib/supabase.js';
 import { useAuth } from '../hooks/useAuth.js';
 import LoginForm from '../components/LoginForm.jsx';
+import AdminGaleria from '../components/AdminGaleria.jsx';
 import './Admin.css';
 
-const BUCKET = 'ogloszenia-zdjecia';
+const BUCKET = 'zdjecia';
 const PUSTY_FORMULARZ = {
   id: null,
   tytul: '',
@@ -34,6 +35,7 @@ export default function Admin() {
 }
 
 function AdminPanel() {
+  const [activeTab, setActiveTab] = useState('ogloszenia');
   const [ogloszenia, setOgloszenia] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -169,10 +171,31 @@ function AdminPanel() {
   return (
     <>
       <div className="admin-header">
-        <h1 className="page__title">Panel administracyjny — ogłoszenia</h1>
+        <h1 className="page__title">Panel administracyjny</h1>
         <button className="btn" onClick={handleLogout}>Wyloguj się</button>
       </div>
 
+      <nav className="admin-tabs" aria-label="Sekcje panelu administracyjnego">
+        <button
+          type="button"
+          className={`admin-tabs__tab ${activeTab === 'ogloszenia' ? 'is-active' : ''}`}
+          aria-current={activeTab === 'ogloszenia' ? 'page' : undefined}
+          onClick={() => setActiveTab('ogloszenia')}
+        >
+          Ogłoszenia
+        </button>
+        <button
+          type="button"
+          className={`admin-tabs__tab ${activeTab === 'galeria' ? 'is-active' : ''}`}
+          aria-current={activeTab === 'galeria' ? 'page' : undefined}
+          onClick={() => setActiveTab('galeria')}
+        >
+          Galeria
+        </button>
+      </nav>
+
+      {activeTab === 'galeria' ? <AdminGaleria /> : (
+        <>
       <form className="admin-form" onSubmit={handleSubmit}>
         <h2 className="page__subtitle" style={{ marginTop: 0 }}>
           {form.id ? 'Edytuj ogłoszenie' : 'Nowe ogłoszenie'}
@@ -273,6 +296,8 @@ function AdminPanel() {
           </article>
         ))}
       </div>
+        </>
+      )}
     </>
   );
 }

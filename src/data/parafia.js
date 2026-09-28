@@ -77,13 +77,12 @@ export const parafia = {
       opis: 'Możliwość spowiedzi przed każdą Mszą Świętą — szczegóły u księdza.',
     },
   ],
-  ogloszeniaUwaga:
-    'Ogłoszenia poniżej są zarządzane z panelu administracyjnego (/admin) i zapisywane w bazie danych.',
   nawigacja: [
     { do: '/', etykieta: 'Strona główna' },
     { do: '/historia', etykieta: 'Historia' },
     { do: '/sakramenty', etykieta: 'Msze i sakramenty' },
     { do: '/ogloszenia', etykieta: 'Ogłoszenia' },
+    { do: '/zdjecia', etykieta: 'Zdjęcia' },
     { do: '/kontakt', etykieta: 'Kontakt' },
   ],
 };

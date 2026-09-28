@@ -8,7 +8,6 @@ export default function Ogloszenia() {
   return (
     <div className="container page">
       <h1 className="page__title">Ogłoszenia parafialne</h1>
-      <p className="eyebrow-note">{parafia.ogloszeniaUwaga}</p>
 
       {loading && <p className="eyebrow-note">Wczytywanie ogłoszeń…</p>}
 

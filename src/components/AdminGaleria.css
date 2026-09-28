@@ -1,0 +1,84 @@
+.admin-gallery__upload {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+  max-width: 720px;
+  margin-bottom: 32px;
+  padding: 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+}
+
+.admin-gallery__upload .kontakt-form__field {
+  flex: 1 1 280px;
+}
+
+.admin-gallery__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin: 8px 0 20px;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.admin-gallery__filter {
+  border: 0;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  padding: 9px 0;
+  background: transparent;
+  color: var(--color-ink-soft);
+  font: inherit;
+  cursor: pointer;
+}
+
+.admin-gallery__filter.is-active {
+  color: var(--color-burgundy);
+  border-bottom-color: var(--color-burgundy);
+}
+
+.admin-gallery__upload .eyebrow-note {
+  flex-basis: 100%;
+  margin: 0;
+}
+
+.admin-gallery__error {
+  color: var(--color-burgundy);
+}
+
+.admin-gallery__message {
+  color: var(--color-verdigris);
+}
+
+.admin-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr));
+  gap: 16px;
+}
+
+.admin-gallery__item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+}
+
+.admin-gallery__item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.admin-gallery__item p {
+  margin: 0;
+  color: var(--color-ink-soft);
+  font-size: 0.88rem;
+}
+
+.admin-gallery__item .btn {
+  align-self: flex-start;
+  padding: 7px 12px;
+}
