@@ -5,19 +5,18 @@ import ScheduleTable from '../components/ScheduleTable.jsx';
 import './Home.css';
 
 const HOME_OGLOSZENIE_EXCERPT_LENGTH = 180;
-const facebookPageUrl = import.meta.env.VITE_FACEBOOK_PAGE_URL?.trim();
-const facebookEmbedUrl = facebookPageUrl
-  ? `https://www.facebook.com/plugins/page.php?${new URLSearchParams({
-      href: 'https://www.facebook.com/ParafiaBelleville?locale=fr_FR',
-      tabs: 'timeline',
-      width: '500',
-      height: '650',
-      small_header: 'true',
-      adapt_container_width: 'true',
-      hide_cover: 'false',
-      show_facepile: 'false',
-    }).toString()}`
-  : null;
+const facebookPageUrl = import.meta.env.VITE_FACEBOOK_PAGE_URL?.trim()
+  || 'https://www.facebook.com/ParafiaBelleville';
+const facebookEmbedUrl = `https://www.facebook.com/plugins/page.php?${new URLSearchParams({
+  href: facebookPageUrl,
+  tabs: 'timeline',
+  width: '500',
+  height: '650',
+  small_header: 'true',
+  adapt_container_width: 'true',
+  hide_cover: 'false',
+  show_facepile: 'false',
+}).toString()}`;
 
 export default function Home() {
   const { ogloszenia, loading } = useOgloszenia(1);
@@ -106,38 +105,25 @@ export default function Home() {
             <p className="facebook-feed__copy">
               Zobacz, co dzieje się w parafii. Publikujemy aktualności, zdjęcia i ważne informacje.
             </p>
-            {facebookPageUrl ? (
-              <a className="btn btn-solid" href={facebookPageUrl} target="_blank" rel="noreferrer">
-                Odwiedź nas na Facebooku <span aria-hidden="true">↗</span>
-              </a>
-            ) : (
-              <p className="eyebrow-note facebook-feed__notice">
-                Dodaj adres publicznej strony parafii w ustawieniu VITE_FACEBOOK_PAGE_URL.
-              </p>
-            )}
+            <a className="btn btn-solid" href={facebookPageUrl} target="_blank" rel="noreferrer">
+              Odwiedź nas na Facebooku <span aria-hidden="true">↗</span>
+            </a>
           </div>
           <div className="facebook-feed__content">
             <div className="facebook-feed__topline">
               <h3>Najnowsze wpisy</h3>
               <span>FACEBOOK</span>
             </div>
-            {facebookEmbedUrl ? (
-              <div className="facebook-feed__frame">
-                <iframe
-                  title="Najnowsze wpisy parafii na Facebooku"
-                  src={facebookEmbedUrl}
-                  loading="lazy"
-                  scrolling="no"
-                  allow="encrypted-media; clipboard-write;"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                />
-              </div>
-            ) : (
-              <div className="facebook-feed__placeholder" aria-hidden="true">
-                <span className="facebook-feed__placeholder-mark">f</span>
-                <span>Wpisy parafialne</span>
-              </div>
-            )}
+            <div className="facebook-feed__frame">
+              <iframe
+                title="Najnowsze wpisy parafii na Facebooku"
+                src={facebookEmbedUrl}
+                loading="lazy"
+                scrolling="no"
+                allow="encrypted-media; clipboard-write;"
+                referrerPolicy="strict-origin-when-cross-origin"
+              />
+            </div>
           </div>
         </div>
       </section>
