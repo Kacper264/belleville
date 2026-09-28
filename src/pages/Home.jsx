@@ -6,9 +6,9 @@ import './Home.css';
 
 const HOME_OGLOSZENIE_EXCERPT_LENGTH = 180;
 const facebookPageUrl = import.meta.env.VITE_FACEBOOK_PAGE_URL?.trim();
-const facebookEmbedUrl = "https://www.facebook.com/ParafiaBelleville?locale=fr_FR"
+const facebookEmbedUrl = facebookPageUrl
   ? `https://www.facebook.com/plugins/page.php?${new URLSearchParams({
-      href: facebookPageUrl,
+      href: 'https://www.facebook.com/ParafiaBelleville?locale=fr_FR',
       tabs: 'timeline',
       width: '500',
       height: '650',
