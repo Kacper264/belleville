@@ -6,6 +6,19 @@ import ScheduleTable from '../components/ScheduleTable.jsx';
 import './Home.css';
 
 const HOME_OGLOSZENIE_EXCERPT_LENGTH = 180;
+const facebookPageUrl = import.meta.env.VITE_FACEBOOK_PAGE_URL?.trim();
+const facebookEmbedUrl = facebookPageUrl
+  ? `https://www.facebook.com/plugins/page.php?${new URLSearchParams({
+      href: facebookPageUrl,
+      tabs: 'timeline',
+      width: '500',
+      height: '650',
+      small_header: 'true',
+      adapt_container_width: 'true',
+      hide_cover: 'false',
+      show_facepile: 'false',
+    }).toString()}`
+  : null;
 
 export default function Home() {
   const { ogloszenia, loading } = useOgloszenia(1);
@@ -20,15 +33,17 @@ export default function Home() {
       <section className="hero">
         <div className="container hero__grid">
           <div>
-            <p className="eyebrow-note">{parafia.miasto}, {parafia.kraj}</p>
-            <h1 className="hero__title">{parafia.nazwa}</h1>
-            <p className="hero__lead">{parafia.wezwanie}. {parafia.zgromadzenie}</p>
+            <img
+              className="hero__brand"
+              src="/hero.png"
+              alt={`${parafia.nazwa} — ${parafia.wezwanie}`}
+            />
+            <p className="hero__lead">{parafia.zgromadzenie}</p>
             <div className="hero__actions">
               <Link className="btn btn-solid" to="/sakramenty">Godziny Mszy i sakramenty</Link>
               <Link className="btn" to="/kontakt">Kontakt z kancelarią</Link>
             </div>
           </div>
-          <ArchMotif className="hero__motif" count={3} />
         </div>
       </section>
 
@@ -80,6 +95,51 @@ export default function Home() {
           </p>
           <ScheduleTable />
           <p className="eyebrow-note" style={{ marginTop: 16 }}>{parafia.adres.uwaga}</p>
+        </div>
+      </section>
+
+      <section className="section section-alt facebook-feed">
+        <div className="container facebook-feed__layout">
+          <div className="facebook-feed__intro">
+            <div className="facebook-feed__brand" aria-hidden="true">f</div>
+            <p className="eyebrow-note">Nasza wspólnota online</p>
+            <h2 className="section-title">Bądźmy w kontakcie</h2>
+            <p className="facebook-feed__copy">
+              Zobacz, co dzieje się w parafii. Publikujemy aktualności, zdjęcia i ważne informacje.
+            </p>
+            {facebookPageUrl ? (
+              <a className="btn btn-solid" href={facebookPageUrl} target="_blank" rel="noreferrer">
+                Odwiedź nas na Facebooku <span aria-hidden="true">↗</span>
+              </a>
+            ) : (
+              <p className="eyebrow-note facebook-feed__notice">
+                Dodaj adres publicznej strony parafii w ustawieniu VITE_FACEBOOK_PAGE_URL.
+              </p>
+            )}
+          </div>
+          <div className="facebook-feed__content">
+            <div className="facebook-feed__topline">
+              <h3>Najnowsze wpisy</h3>
+              <span>FACEBOOK</span>
+            </div>
+            {facebookEmbedUrl ? (
+              <div className="facebook-feed__frame">
+                <iframe
+                  title="Najnowsze wpisy parafii na Facebooku"
+                  src={facebookEmbedUrl}
+                  loading="lazy"
+                  scrolling="no"
+                  allow="encrypted-media; clipboard-write;"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                />
+              </div>
+            ) : (
+              <div className="facebook-feed__placeholder" aria-hidden="true">
+                <span className="facebook-feed__placeholder-mark">f</span>
+                <span>Wpisy parafialne</span>
+              </div>
+            )}
+          </div>
         </div>
       </section>
     </>

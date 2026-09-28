@@ -102,12 +102,16 @@ ani robić redeployu, żeby dodać nowe ogłoszenie.
 Lokalnie:
 ```bash
 cp .env.example .env
-# uzupełnij VITE_SUPABASE_URL i VITE_SUPABASE_ANON_KEY
+# uzupełnij VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY oraz opcjonalnie VITE_FACEBOOK_PAGE_URL
 ```
 
-Na Netlify: *Site configuration* → *Environment variables* → dodaj te same
-dwie zmienne (`VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`), potem zrób
-redeploy, żeby build je uwzględnił.
+Na Netlify: *Site configuration* → *Environment variables* → dodaj
+`VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY` oraz opcjonalnie
+`VITE_FACEBOOK_PAGE_URL`, potem zrób redeploy, żeby build je uwzględnił.
+
+`VITE_FACEBOOK_PAGE_URL` powinien zawierać publiczny adres strony na
+Facebooku, której najnowsze wpisy mają pojawiać się na stronie głównej.
+Wtyczka Facebooka nie wyświetla profili prywatnych.
 
 **5. Gotowe** — wejdź na `/admin`, zaloguj się utworzonym kontem i
 dodawaj/edytuj/usuwaj ogłoszenia. Strona publiczna (`/` i `/ogloszenia`)
