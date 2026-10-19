@@ -109,6 +109,11 @@ Na Netlify: *Site configuration* → *Environment variables* → dodaj
 `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY` oraz opcjonalnie
 `VITE_FACEBOOK_PAGE_URL`, potem zrób redeploy, żeby build je uwzględnił.
 
+Planowana funkcja Netlify `keepalive` odpyta tabelę Supabase co dwa dni o
+08:00 UTC. W tych samych ustawieniach Netlify dodaj także `SUPABASE_URL`
+i `SUPABASE_ANON_KEY`, używając tych samych wartości co dla zmiennych
+`VITE_`. Po wdrożeniu harmonogram uruchamia się automatycznie.
+
 `VITE_FACEBOOK_PAGE_URL` powinien zawierać publiczny adres strony na
 Facebooku, której najnowsze wpisy mają pojawiać się na stronie głównej.
 Wtyczka Facebooka nie wyświetla profili prywatnych.
